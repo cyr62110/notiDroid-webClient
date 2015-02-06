@@ -1,0 +1,17 @@
+$dimenSmallest: 8px;
+$dimenSmall: 1.5 * $dimenSmallest;
+$dimenNormal: 2 * $dimenSmallest;
+$dimenLarge: 1.5 * $dimenNormal;
+$dimenXLarge: 2 * $dimenNormal;
+
+$paddingSmallest: $dimenSmallest;
+$paddingSmall: $dimenSmall;
+$paddingNormal: $dimenNormal;
+$paddingLarge: $dimenLarge;
+$paddingXLarge: $dimenXLarge;
+
+$marginSmallest: $dimenSmallest;
+$marginSmall: $dimenSmall;
+$marginNormal: $dimenNormal;
+$marginLarge: $dimenLarge;
+$marginXLarge: $dimenXLarge;

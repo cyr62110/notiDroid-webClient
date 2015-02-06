@@ -1,0 +1,10 @@
+@import '../base/core';
+
+.toolbar {
+    background-color: $primaryColor;
+    @include z-depth(2);
+}
+
+.toolbar__label {
+    color: white;
+}

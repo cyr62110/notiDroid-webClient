@@ -1,0 +1,9 @@
+//This file allow us to override default values set in LumX and customize our
+//application.
+
+//We import all files defining colors, dimens that will be used in all the project
+@import 'colors';
+@import 'dimens';
+
+//And we overload some default value of LumX.
+$base-background-color: #primaryColor;

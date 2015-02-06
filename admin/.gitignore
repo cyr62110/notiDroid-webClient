@@ -1,0 +1,13 @@
+#Node dependencies
+node_modules
+
+#App dependencies
+app/bower_components
+app/scss/bourbon
+
+#Production output folder
+dist
+
+#Debug output folders
+.tmp
+.sass-cache
