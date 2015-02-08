@@ -6,13 +6,19 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-
-        <link rel="stylesheet" href="bower_components/lumx/dist/css/lumx.css">
-        <link rel="stylesheet" href="styles/flexboxgrid.min.css">
+    
+        <!-- build:css(.tmp) styles/core.css -->
         <link rel="stylesheet" href="styles/core.css">
         <link rel="stylesheet" href="styles/colors.css">
         <link rel="stylesheet" href="styles/toolbar.css">
         <link rel="stylesheet" href="styles/login.css">
+        <!-- endbuild -->
+
+        <link rel="stylesheet" href="bower_components/lumx/dist/css/lumx.css">
+
+        <!-- build:css styles/libs.css -->
+        <link rel="stylesheet" href="styles/flexboxgrid.min.css">
+        <!-- endbuild -->
     </head>
     <body ng-app="admin">
         <ng-include src="'views/toolbar.html'">
@@ -33,13 +39,15 @@
         <script src="bower_components/moment/min/moment-with-locales.min.js"></script>
         <script src="bower_components/lumx/dist/js/lumx.js"></script>
     
+        <!-- build:js js/app.js -->
         <script src="scripts/app.js"></script>  
 
         <script src="scripts/services/ConfigurationService.js"></script>
         <script src="scripts/services/AuthenticationService.js"></script>
         <script src="scripts/services/AdminAPIService.js"></script>
 
-        <script src="scripts/controllers/LoginController.js"></script>      
+        <script src="scripts/controllers/LoginController.js"></script>
+        <!-- endbuild -->      
     
     </body>
 </html>

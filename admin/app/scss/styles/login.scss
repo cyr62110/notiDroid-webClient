@@ -4,6 +4,8 @@ $defaultBoxCornerRadius: 10px;
 
 .login {
     height: 100%;
+    width: 100%;
+    position:absolute;
     display: flex;
     justify-content: center;
     align-items: center;   
@@ -15,20 +17,15 @@ $defaultBoxCornerRadius: 10px;
     flex-basis: 400px;
 }
 
-.login .title {
+.login .card-title {
     width: 100%;
     @include z-depth(1);
     padding: $paddingNormal;
 }
 
-.login .content {
+.login .card-content {
     padding: $paddingLarge;
     padding-top: 0px;
-}
-
-.login .content form {
-    margin-top: $marginNormal;
-    margin-bottom: $marginNormal;
 }
 
 .login .card__actions {
@@ -36,8 +33,6 @@ $defaultBoxCornerRadius: 10px;
     display: flex;
     flex-direction: row-reverse;
 }
-
-
 
 .login .text-field {
     padding-top: ($base-spacing-unit * 4) - 12px;

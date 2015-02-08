@@ -1,24 +1,24 @@
 <div class="login">
     <div class="card">
-        <div class="title">
-            <span class="fs-headline display-block tc-primary-color">Log-in</span>
-        </div>
-        <div class="content">
-            <form>
+        <form ng-submit="logInCtrl.logIn()">
+            <div class="card-title">
+                <span class="fs-headline display-block tc-primary-color">Log-in</span>
+            </div>
+            <div class="card-content">
                 <div>
                     <lx-text-field label="Username" disabled="false">
-                        <input type="text" ng-model="logInCtrl.username" >
+                        <input type="text" ng-model="logInCtrl.credentials.username" required >
                     </lx-text-field>
                 </div>
                 <div>
                     <lx-text-field label="Password" disabled="false">
-                        <input type="password" ng-model="logInCtrl.password" >
+                        <input type="password" ng-model="logInCtrl.credentials.password" required >
                     </lx-text-field>
                 </div>
-            </form>
-        </div>
-        <div class="card__actions">
-            <button class="btn btn--m btn--black btn--flat" lx-ripple>Connect</button>
-        </div>
+            </div>
+            <div class="card__actions">
+                <input type="submit" class="btn btn--m btn--black btn--flat" value="Connect" lx-ripple >
+            </div>
+        </form>
     </div>
 </div>

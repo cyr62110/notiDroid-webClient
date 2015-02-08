@@ -1,9 +1,17 @@
 'use strict';
 
 angular.module('admin')
-.controller('LoginController', function ($scope) {
+.controller('LoginController', ['AuthenticationService', function (authSrv) {
+    var self = this;
     
-    this.logIn = function() {
-        
-    }
-});
+    self.logIn = function() {
+        authSrv.logIn().then(
+            function(token) {
+                console.log(token);
+            },
+            function (error) {
+                console.log(error);
+            }
+        );
+    };
+}]);
