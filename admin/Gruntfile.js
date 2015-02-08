@@ -27,7 +27,7 @@ module.exports = function (grunt) {
 
     //We use sass to produce our CSS files.
     sass: {
-      debug: {
+      server: {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/scss/styles/',
@@ -66,7 +66,7 @@ module.exports = function (grunt) {
       },
       css: {
         files: ['<%= yeoman.app %>/scss/{,*/}*.scss'],
-        tasks: ['sass:debug']
+        tasks: ['sass:server']
       },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
@@ -192,6 +192,12 @@ module.exports = function (grunt) {
       }
     },
 
+    uglify: {
+      options: {
+        mangle: false
+      },
+    },
+
     // The following *-min tasks produce minified files in the dist folder
     imagemin: {
       dist: {
@@ -296,32 +302,6 @@ module.exports = function (grunt) {
         'svgmin'
       ]
     },
-
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/styles/main.css': [
-    //         '.tmp/styles/{,*/}*.css',
-    //         '<%= yeoman.app %>/styles/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
   });
 
 
@@ -333,6 +313,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'bower-install',
+      'sass:server',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -340,14 +321,10 @@ module.exports = function (grunt) {
     ]);
   });
 
-  grunt.registerTask('server', function () {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve']);
-  });
-
   grunt.registerTask('build', [
     'clean:dist',
     'bower-install',
+    'sass:dist',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
