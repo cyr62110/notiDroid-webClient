@@ -29,5 +29,7 @@ angular.module('admin', ['lumx','ngRoute'])
         });
 })
 .config(function($httpProvider) {
-    $httpProvider.defaults.headers.post = { 'Content-Type' : 'application/json' }
+    //$httpProvider.defaults.headers.post = { 'Content-Type' : 'application/json' }
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
 });

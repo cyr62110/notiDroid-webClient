@@ -52,6 +52,7 @@ angular.module('admin')
                     var request = {
                         method: 'GET',
                         url: config.apiServerUrl + '/oauth/token?grant_type=client_credentials',
+                        withCredentials: true,
                         headers: {
                             'Authorization' : 'Basic YUBhLmFhYTph'
                         }
@@ -91,7 +92,7 @@ angular.module('admin')
             },
             logIn: function() {
                 var defered = $q.defer();
-                if(credentials.username == null || credentials.password == null) {
+                if(self.credentials.username == null || self.credentials.password == null) {
                     defered.resolve({
                         isAuthenticated: false,
                         error: "You must call setCredentials() before logIn()"
